@@ -6,7 +6,7 @@ function Header() {
     <div className="header">
       <img src={logoHeader} alt="logoHeader" />
       <nav>
-        <NavLink to="/accueil" className="lien-site lien-menu">
+        <NavLink to="/" className="lien-site lien-menu">
           Accueil
         </NavLink>
         <NavLink to="/a-propos" className="lien-site lien-menu">
