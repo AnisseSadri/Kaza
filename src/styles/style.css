@@ -286,7 +286,7 @@ body {
 
 .fleche-switchdown.true {
   justify-content: start;
-  transform: translateX(95%);
+  transform: rotate(-180deg);
 }
 
 .description-switchdown {

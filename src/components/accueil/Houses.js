@@ -5,7 +5,7 @@ function Homes() {
   return (
     <div className="appartements">
       {Houses.map((house) => (
-        <NavLink key={house.id} to={"/home/" + house.id + "/#"}>
+        <NavLink key={house.id} to={"/home/" + house.id}>
           <div className="house">
             <img src={house.cover} alt="bannerAccueil" />
             <h3>{house.title}</h3>
