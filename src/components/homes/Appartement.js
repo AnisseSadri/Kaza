@@ -14,7 +14,7 @@ function Appartement() {
   const fichehome = Houses.find((home) => home.id === id.id);
 
   /* Tags */
-  const tagshome = fichehome?.tags.map((tags, index) => {
+  const tagshome = fichehome.tags.map((tags, index) => {
     return <Tag key={index} nom={tags} />;
   });
 
