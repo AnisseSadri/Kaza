@@ -11,10 +11,10 @@ import Layout from "../Layouts/Layout";
 function Appartement() {
   /* Récupère la bonne fiche */
   const id = useParams();
-  const fichehome = Houses.find((home) => home.id === id.id);
+  const appart = Houses.find((home) => home.id === id.id);
 
   /* Tags */
-  const tagshome = fichehome.tags.map((tags, index) => {
+  const tagshome = appart.tags.map((tags, index) => {
     return <Tag key={index} nom={tags} />;
   });
 
@@ -22,7 +22,7 @@ function Appartement() {
   let notehome = [];
   let etoileComplete = true;
   for (let index = 0; index < 5; index++) {
-    if (index === parseInt(fichehome.rating)) {
+    if (index === parseInt(appart.rating)) {
       etoileComplete = false;
     }
     if (etoileComplete === true) {
@@ -31,7 +31,7 @@ function Appartement() {
           key={index}
           className="etoile"
           src={Etoile}
-          alt={`${fichehome.rating}/5`}
+          alt={`${appart.rating}/5`}
         />
       );
     } else {
@@ -40,35 +40,35 @@ function Appartement() {
           key={index}
           className="etoile"
           src={EtoileVide}
-          alt={`${fichehome.rating}/5`}
+          alt={`${appart.rating}/5`}
         />
       );
     }
   }
 
   /* Équipements */
-  const equipementshome = fichehome.equipments.map((equipment, index) => {
+  const equipementshome = appart.equipments.map((equipment, index) => {
     return <li key={index}>{equipment}</li>;
   });
 
   return (
     <>
       <Layout>
-        {fichehome ? (
+        {appart ? (
           <div className="appart">
-            <Switch images={fichehome.pictures} />
+            <Switch images={appart.pictures} />
             <div className="homes-proprio">
               <div className="info-homes">
-                <span className="titre-home">{fichehome.title}</span>
-                <span className="endroit-home">{fichehome.location}</span>
+                <span className="titre-home">{appart.title}</span>
+                <span className="endroit-home">{appart.location}</span>
                 <div className="tags">{tagshome}</div>
               </div>
               <div className="proprio-note">
                 <div className="info-proprio">
-                  <span className="nom-proprio">{fichehome.host.name}</span>
+                  <span className="nom-proprio">{appart.host.name}</span>
                   <img
                     className="photo-proprio"
-                    src={fichehome.host.picture}
+                    src={appart.host.picture}
                     alt="Propriétaire"
                   />
                 </div>
@@ -78,7 +78,7 @@ function Appartement() {
             <div className="description-equipements">
               <SwitchDown
                 titre="Description"
-                description={fichehome.description}
+                description={appart.description}
               />
               <SwitchDown titre="Équipements" description={equipementshome} />
             </div>
