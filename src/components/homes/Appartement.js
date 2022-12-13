@@ -3,7 +3,7 @@ import { useParams, Navigate } from "react-router-dom";
 import Houses from "../../datas/homes.json";
 import Switch from "./Switch";
 import Tag from "./Tag";
-import Etoile from "../../assets/Etoile.png";
+import EtoilePleine from "../../assets/Etoile.png";
 import EtoileVide from "../../assets/EtoileVide.png";
 import SwitchDown from "./SwitchDown";
 import Layout from "../Layouts/Layout";
@@ -20,24 +20,24 @@ function Appartement() {
 
   /* Notes */
   let notehome = [];
-  let etoileComplete = true;
-  for (let index = 0; index < 5; index++) {
-    if (index === parseInt(appart.rating)) {
-      etoileComplete = false;
+  let etoilePleine = true;
+  for (let i = 0; i < 5; i++) {
+    if (i === parseInt(appart.rating)) {
+      etoilePleine = false;
     }
-    if (etoileComplete === true) {
+    if (etoilePleine === true) {
       notehome.push(
         <img
-          key={index}
+          key={i}
           className="etoile"
-          src={Etoile}
+          src={EtoilePleine}
           alt={`${appart.rating}/5`}
         />
       );
     } else {
       notehome.push(
         <img
-          key={index}
+          key={i}
           className="etoile"
           src={EtoileVide}
           alt={`${appart.rating}/5`}
