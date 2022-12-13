@@ -6,8 +6,6 @@ function Switch({ images }) {
   let nombreImg = images.length;
 
   function imgPrecedente() {
-    console.log(nombreImg);
-    console.log(imgAfficher);
     if (imgAfficher === 0) {
       changerImg(nombreImg - 1);
     } else {
@@ -17,8 +15,6 @@ function Switch({ images }) {
   }
 
   function imgSuivante() {
-    console.log(nombreImg - 1);
-    console.log(imgAfficher);
     if (imgAfficher === nombreImg - 1) {
       changerImg((nombreImg = 0));
     } else {
