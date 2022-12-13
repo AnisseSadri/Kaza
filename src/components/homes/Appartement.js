@@ -77,10 +77,10 @@ function Appartement() {
             </div>
             <div className="description-equipements">
               <SwitchDown
-                titre="description"
+                titre="Description"
                 description={appart?.description}
               />
-              <SwitchDown titre="équipements" description={equipementshome} />
+              <SwitchDown titre="Équipements" description={equipementshome} />
             </div>
           </div>
         ) : (
