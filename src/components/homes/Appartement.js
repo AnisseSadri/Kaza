@@ -69,7 +69,7 @@ function Appartement() {
                   <img
                     className="photo-proprio"
                     src={appart.host.picture}
-                    alt="Propriétaire"
+                    alt="proprio"
                   />
                 </div>
                 <div className="note">{notehome}</div>
@@ -77,10 +77,10 @@ function Appartement() {
             </div>
             <div className="description-equipements">
               <SwitchDown
-                titre="Description"
+                titre="description"
                 description={appart.description}
               />
-              <SwitchDown titre="Équipements" description={equipementshome} />
+              <SwitchDown titre="équipements" description={equipementshome} />
             </div>
           </div>
         ) : (
