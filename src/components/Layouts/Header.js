@@ -1,17 +1,30 @@
 import logoHeader from "../../assets/logoHeader.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 function Header() {
+  const location = useLocation();
   return (
     <div className="header">
       <img src={logoHeader} alt="logoHeader" />
       <nav>
-        <NavLink to="/" className="lien-site lien-menu">
-          Accueil
-        </NavLink>
-        <NavLink to="/a-propos" className="lien-site lien-menu">
-          À propos
-        </NavLink>
+        {location.pathname === "/accueil" ? (
+          <NavLink className="liensite--active" to="/">
+            Accueil
+          </NavLink>
+        ) : (
+          <NavLink className="liensite" to="/">
+            Accueil
+          </NavLink>
+        )}
+        {location.pathname === "/a-propos" ? (
+          <NavLink className="liensite--active" to="/a-propos">
+            A Propos
+          </NavLink>
+        ) : (
+          <NavLink className="liensite" to="/a-propos">
+            A Propos
+          </NavLink>
+        )}
       </nav>
     </div>
   );
