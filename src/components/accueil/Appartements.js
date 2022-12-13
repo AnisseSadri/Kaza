@@ -1,4 +1,4 @@
-import Homes from "./Houses";
+import Homes from "./Homes";
 
 function Appartements() {
   return (
