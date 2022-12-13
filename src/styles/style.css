@@ -352,6 +352,10 @@ body {
     text-align: left;
   }
 
+  .house {
+    width: 240px;
+  }
+
   .description-equipements {
     display: flex;
     flex-direction: column;
