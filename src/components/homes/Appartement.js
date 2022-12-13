@@ -14,7 +14,7 @@ function Appartement() {
   const appart = Houses.find((home) => home.id === id.id);
 
   /* Tags */
-  const tagshome = appart.tags.map((tags, index) => {
+  const tagshome = appart?.tags.map((tags, index) => {
     return <Tag key={index} nom={tags} />;
   });
 
@@ -22,7 +22,7 @@ function Appartement() {
   let notehome = [];
   let etoilePleine = true;
   for (let i = 0; i < 5; i++) {
-    if (i === parseInt(appart.rating)) {
+    if (i === parseInt(appart?.rating)) {
       etoilePleine = false;
     }
     if (etoilePleine === true) {
@@ -31,7 +31,7 @@ function Appartement() {
           key={i}
           className="etoile"
           src={EtoilePleine}
-          alt={`${appart.rating}/5`}
+          alt={`${appart?.rating}/5`}
         />
       );
     } else {
@@ -40,14 +40,14 @@ function Appartement() {
           key={i}
           className="etoile"
           src={EtoileVide}
-          alt={`${appart.rating}/5`}
+          alt={`${appart?.rating}/5`}
         />
       );
     }
   }
 
   /* Équipements */
-  const equipementshome = appart.equipments.map((equipment, index) => {
+  const equipementshome = appart?.equipments.map((equipment, index) => {
     return <li key={index}>{equipment}</li>;
   });
 
@@ -56,19 +56,19 @@ function Appartement() {
       <Layout>
         {appart ? (
           <div className="appart">
-            <Switch images={appart.pictures} />
+            <Switch images={appart?.pictures} />
             <div className="homes-proprio">
               <div className="info-homes">
-                <span className="titre-home">{appart.title}</span>
-                <span className="endroit-home">{appart.location}</span>
+                <span className="titre-home">{appart?.title}</span>
+                <span className="endroit-home">{appart?.location}</span>
                 <div className="tags">{tagshome}</div>
               </div>
               <div className="proprio-note">
                 <div className="info-proprio">
-                  <span className="nom-proprio">{appart.host.name}</span>
+                  <span className="nom-proprio">{appart?.host.name}</span>
                   <img
                     className="photo-proprio"
-                    src={appart.host.picture}
+                    src={appart?.host.picture}
                     alt="proprio"
                   />
                 </div>
@@ -78,7 +78,7 @@ function Appartement() {
             <div className="description-equipements">
               <SwitchDown
                 titre="description"
-                description={appart.description}
+                description={appart?.description}
               />
               <SwitchDown titre="équipements" description={equipementshome} />
             </div>
