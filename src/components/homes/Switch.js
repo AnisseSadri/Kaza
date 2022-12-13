@@ -29,7 +29,7 @@ function Switch({ images }) {
         <img
           className="fleche fleche-gauche"
           src={fleche}
-          alt="Contenu précedént"
+          alt="image précedénte"
           onClick={imgPrecedente}
         />
       )}
@@ -49,7 +49,7 @@ function Switch({ images }) {
         <img
           className="fleche fleche-droite"
           src={fleche}
-          alt="Contenu suivant"
+          alt="image suivante"
           onClick={imgSuivante}
         />
       )}
